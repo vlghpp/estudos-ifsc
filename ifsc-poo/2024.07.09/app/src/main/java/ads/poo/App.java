@@ -3,6 +3,7 @@
  */
 package ads.poo;
 
+import ads.poo.produtos.Celular;
 import ads.poo.produtos.Dimensao;
 import ads.poo.produtos.SemFio;
 import ads.poo.produtos.Telefone;
@@ -10,11 +11,40 @@ import ads.poo.produtos.Telefone;
 public class App {
 
     public static void main(String[] args) {
-        Dimensao dimen = new Dimensao(23.4, 33.1, 9);
-        Telefone tel = new Telefone(2312,"113213", dimen, 1, "+QW5");
-        Telefone telSem = new SemFio(2132, "333333", new Dimensao(1,3,2), 2, "+SW4", 2.4, 15, 50);
+//        Dimensao dimen = new Dimensao(23.4, 33.1, 9);
+//        Telefone tel = new Telefone(2312,"113213", dimen, 1, "+QW5");
+//        Telefone telSem = new SemFio(2132, "333333", new Dimensao(1,3,2), 2, "+SW4", 2.4, 15, 50);
+//
+//        System.out.println(tel.imprimirDados());
+//        System.out.println(telSem.imprimirDados());
 
-        System.out.println(tel.imprimirDados());
-        System.out.println(telSem.imprimirDados());
+        Telefone[] t = new Telefone[4];
+
+        t[0] = new Telefone(3, "134", new Dimensao(1,1,1), 1.1, "modelo");
+        t[1] = new Celular(1, "123", new Dimensao(1,1,1), 500, "modelo",1,1, 123,  "Linux");
+        t[2] = new Celular(1, "123", new Dimensao(1,1,1), 500, "modelo",1,1, 123,  "Linux");
+        t[3] = new SemFio(1, "123", new Dimensao(1,1,1), 500, "modelo",1,1, 123);
+
+
+        //Telefone t = null
+        //Celular d = null
+
+        // t = new Telefone(3, "134", new Dimensao(1,1,1), 1.1, "modelo");
+        // d = new Celular(1, "123", new Dimensao(1,1,1), 500, "modelo",1,1, 123,  "Linux");
+
+        //se fizer t = d; ele funciona, pois t é um Telefone e você está tentando guaradr um Celular dentro dele.
+
+        //d = (Celular) t; //fazer isso dar certo -> d = t
+
+        for (Telefone telefone : t) {
+            System.out.println(telefone.imprimirDados());
+
+            //Verifica se o telefone da vez é uma instancia de celular, se for ele vai printar o sistema operacional dele
+            if(telefone instanceof Celular){
+                //((Celular) telefone) transforma o telefone em um celular para conseguir obter a função do get Sistema Operacional
+                System.out.println(((Celular) telefone).getSO());
+            }
+        }
+
     }
 }
