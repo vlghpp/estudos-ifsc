@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72a4d483-a153-4612-8655-db99c620c29f" name="Changes" comment="" />
+    <list default="true" id="72a4d483-a153-4612-8655-db99c620c29f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ads/poo/diassemana/DiasDaSemana.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ads/poo/diassemana/Disciplina.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ads/poo/enumplanetas/Planetas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ads/poo/exerciciobaralho/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ads/poo/exerciciobaralho/Cartas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ads/poo/exerciciobaralho/Naipes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ads/poo/exerciciobaralho/ValorCartas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ads/poo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ads/poo/diassemana/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ads/poo/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/ads/poo/AppTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,12 +31,7 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="exercicio" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -35,8 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -64,19 +71,33 @@
     "Application.App.executor": "Run",
     "Gradle.2024.07.30:app [:app:App.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/aluno/estudos-ifsc/ifsc-poo/2024.07.30-lab",
+    "last_opened_file_path": "/home/aluno/estudos-ifsc/ifsc-poo/2024.07.30",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="2024.07.30" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="2024.07.30" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -96,6 +117,7 @@
       <workItem from="1722377094878" duration="5665000" />
       <workItem from="1722383469268" duration="265000" />
       <workItem from="1722383742437" duration="11000" />
+      <workItem from="1722383998325" duration="5279000" />
     </task>
     <servers />
   </component>

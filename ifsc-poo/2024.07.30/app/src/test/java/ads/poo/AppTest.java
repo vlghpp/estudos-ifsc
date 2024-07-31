@@ -3,8 +3,8 @@
  */
 package ads.poo;
 
+import ads.poo.diassemana.App;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
