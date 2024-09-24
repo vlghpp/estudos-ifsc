@@ -1,4 +1,4 @@
-package org.example.fila.src.esd;
+package esd;
 
 public class Fila {
     Object[] area;
@@ -10,6 +10,14 @@ public class Fila {
         this.inicio = 0;
         this.n = 0;
         this.fim = 0;
+    }
+
+    public int length() {
+        return this.n;
+    }
+
+    public int capacidade() {
+        return this.fim - this.inicio;
     }
 
     public void adiciona(Object valor){
@@ -26,11 +34,28 @@ public class Fila {
     }
 
     public Object remove(){
-        if(!estaCheia()){
-            return area[inicio];
+        if(!estaVazia()){
+            if(fim == area.length){
+                fim = 0;
+            }
+
+            Object elemento = area[inicio];
+            area[inicio] = null;
+            n--;
+            inicio = (inicio + 1) % area.length;
+            return elemento;
+        }else{
+            throw new IndexOutOfBoundsException("FILA TA CHEIA!");
         }
     }
 
+    public Object frente() {
+        if(!estaVazia()){
+            return area[inicio];
+        }else{
+            throw new IndexOutOfBoundsException("FILA TA CHEIA!");
+        }
+    }
 
     public boolean estaVazia(){
         return n==0;
@@ -39,5 +64,9 @@ public class Fila {
     public boolean estaCheia(){
         return n == area.length;
     }
-
+    public void limpa() {
+        for (int i = 0; i < area.length; i++) {
+            area[i] = null;
+        }//area = new Object[];
+    }
 }
