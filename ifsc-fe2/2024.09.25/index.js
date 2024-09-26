@@ -9,6 +9,14 @@ const raiz = document.getElementById('raiz')
 const porcen = document.getElementById('porcentagem')
 
 
-const um = document.getElementById('um')
+const numeros = document.querySelectorAll('.numero')
+
+numeros.forEach(numero => {
+    numero.addEventListener('click', e => {
+        const texto = numero.innerHTML
+        numeroVisor.innerHTML =  
+    })
+})
+
 
 
