@@ -1,0 +1,2 @@
+Oi, este é um (teste). Objetivo é verificar a existencia de {pares}
+com diferentes [caracteres.
