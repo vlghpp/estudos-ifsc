@@ -17,27 +17,39 @@ public class Deque {
     }
 
     public int capacidade() {
-        return this.fim - this.inicio;
+        return area.length;
     }
 
 
-    public void adiciona(Object valor){
-        if(!estaCheia()){
-            if(fim == area.length){
-                fim = 0;
+    public void adiciona(Object valor) {
+        if (esta_cheia()) {
+            // Expande o deque ao dobro da capacidade
+            Object[] novoArray = new Object[area.length * 2];
+
+            // Copia os elementos atuais para o novo array
+            for (int i = 0; i < n; i++) {
+                int inicioNovo = (inicio + i) % area.length;
+                novoArray[i] = area[inicioNovo];
             }
-            area[fim] = valor;
-            fim++;
-            n++;
-        }else{
-            throw new IndexOutOfBoundsException("FILA TA CHEIA!");
+
+            area = novoArray;
+            inicio = 0;
+            fim = n;
         }
+
+        // Agora adiciona normalmente
+        area[fim] = valor;
+        fim = (fim + 1) % area.length;
+        n++;
     }
 
-    public void insere(Object valor){
-        if(!estaCheia()){
+    public void insere(Object valor) {
+        if (!esta_cheia()) {
+            inicio = (inicio - 1 + area.length) % area.length;
             area[inicio] = valor;
-            inicio++;
+            n++;
+        } else {
+            throw new IndexOutOfBoundsException("FILA TA CHEIA!");
         }
     }
 
@@ -57,12 +69,12 @@ public class Deque {
         }
     }
 
-    public Object extrai_fim(){
+    public Object extrai_final(){
         if(!esta_vazia()){
+            fim = (fim - 1 + area.length) % area.length;
             Object elemento = area[fim];
             area[fim] = null;
             n--;
-            fim = (fim + 1) % area.length;
             return elemento;
         }else{
             throw new IndexOutOfBoundsException("FILA TA VAZIA!");
@@ -77,15 +89,19 @@ public class Deque {
         }
     }
 
-    public Object acessa_fim() {
+    public Object acessa_final() {
         if(!esta_vazia()){
-            return area[fim];
+            int ultimoIndice = (fim - 1 + area.length) % area.length;
+            return area[ultimoIndice];
         }else{
             throw new IndexOutOfBoundsException("FILA TA VAZIA!");
         }
     }
     public Object acessa(int index){
         if(!esta_vazia()){
+            if (index < 0 || index >= n) {
+                throw new IndexOutOfBoundsException("Indice invalido");
+            }
             return area[index];
         }else{
             throw new IndexOutOfBoundsException("FILA TA VAZIA!");
@@ -96,12 +112,16 @@ public class Deque {
         return n==0;
     }
 
-    public boolean estaCheia(){
+    public boolean esta_cheia(){
         return n == area.length;
     }
+
     public void limpa() {
         for (int i = 0; i < area.length; i++) {
             area[i] = null;
         }
+        inicio = 0;
+        fim = 0;
+        n = 0;
     }
 }
