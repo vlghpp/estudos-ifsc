@@ -3,7 +3,7 @@ package org.example;
 public class Deque {
     Object[] area;
     int inicio, fim;
-    int n; // quantidade de valores armazenados
+    int n;
 
     public Deque() {
         area = new Object[5];
