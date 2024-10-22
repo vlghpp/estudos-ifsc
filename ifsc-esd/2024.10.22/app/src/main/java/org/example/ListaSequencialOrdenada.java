@@ -3,13 +3,14 @@ package org.example;
 
 public class ListaSequencialOrdenada<T extends Comparable> extends ListaSequencial{
 
-    @Override
-    public void adiciona(Object valor) {
-        super.adiciona(valor);
-        if(comprimento() == 0){
-            this.area[0] = valor;
-            return;
+    public void adiciona(T valor) throws Exception {
+        for (int i = 0; i < comprimento(); i++) {
+            if(valor.compareTo(area[i]) <= 0){
+                super.insere(i, valor);
+                return;
+            }
         }
+        super.adiciona(valor);
     }
 
     private boolean buscaBinaria(Object[] vetor, int inicio, int fim, T alvo){
