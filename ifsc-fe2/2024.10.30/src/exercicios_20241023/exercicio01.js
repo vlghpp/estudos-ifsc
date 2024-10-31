@@ -11,7 +11,7 @@ function somaArray(array){
         }
 
     }
-    return soma
+    return soma;
 }
 
 
