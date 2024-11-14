@@ -32,4 +32,10 @@ export class ControladorTarefaService {
   public criaTarefa(descricao: string): Tarefa{
     return {_id: Date.now(), _descricao: descricao, _concluida: false}
   }
+
+  public adicionaTarefa(descricao: string): void{
+    const tarefa: Tarefa = {_id: Date.now(), _descricao: descricao, _concluida:false};
+    this.listas[this.listaAtual]._tarefas.push(tarefa)
+    this.salvaLista()
+  }
 }

@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ListaTarefasComponent {
 
+
   lista: ListaTarefa = {
     _id: 4,
     _nome: "Tarefas ADS",
@@ -23,5 +24,9 @@ export class ListaTarefasComponent {
   constructor(private controladorTarefas: ControladorTarefaService){
 
 
+  }
+
+  public adicionaTarefa(){  
+    this.controladorTarefas.adicionaTarefa(this.descricao)
   }
 }
