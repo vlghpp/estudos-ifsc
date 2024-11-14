@@ -1,0 +1,8 @@
+{
+  "scripts":{
+    "ng": "ng"
+  },
+  "dependencies": {
+    "@angular/cli": "^18.2.11"
+  }
+}
