@@ -8,9 +8,15 @@ import { Tarefa } from '../model/tarefa';
 export class ControladorTarefaService {
 
   private listas: ListaTarefa[] = this.carregaListas()
-  private listaAtual: number = 0;
+  private idListaAtual: number = 0;
+  
+  constructor() {
+      
+  }
 
-  constructor() { }
+  public get listaAtual(){
+    return this.listas[this.idListaAtual]
+  }
 
   public salvaLista(){
     localStorage.setItem('tarefas', JSON.stringify(this.listas))
@@ -18,7 +24,7 @@ export class ControladorTarefaService {
 
   public carregaListas(): ListaTarefa[]{
     const listasSalvas = localStorage.getItem('tarefas')
-    return listasSalvas ? JSON.parse(listasSalvas) : this.criaLista('Lista 1')
+    return listasSalvas ? JSON.parse(listasSalvas) : [this.criaLista('Lista 1')]
   }
 
   public criaLista(nome: string): ListaTarefa{
@@ -35,7 +41,7 @@ export class ControladorTarefaService {
 
   public adicionaTarefa(descricao: string): void{
     const tarefa: Tarefa = {_id: Date.now(), _descricao: descricao, _concluida:false};
-    this.listas[this.listaAtual]._tarefas.push(tarefa)
+    this.listas[this.idListaAtual]._tarefas.push(tarefa)
     this.salvaLista()
   }
 }

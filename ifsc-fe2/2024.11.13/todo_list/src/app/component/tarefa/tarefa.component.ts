@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { booleanAttribute, Component, Input, numberAttribute } from '@angular/core';
 
 @Component({
   selector: 'app-tarefa',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './tarefa.component.html',
   styleUrl: './tarefa.component.css'
 })
-export class TarefaComponent {
-
+export class TarefaComponent {  
+  @Input( {transform : numberAttribute} ) id: number = 0
+  @Input() descricao: string = ""
+  @Input( { transform : booleanAttribute} ) concluida: boolean = false
 }
