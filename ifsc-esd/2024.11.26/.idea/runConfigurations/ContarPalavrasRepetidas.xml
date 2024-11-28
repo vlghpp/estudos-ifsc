@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ContarPalavrasRepetidas" type="Application" factoryName="Application" activateToolWindowBeforeRun="false" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="org.example.ContarPalavrasRepetidas" />
+    <module name="aula.app.main" />
+    <option name="PROGRAM_PARAMETERS" value="arquivo2.txt" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

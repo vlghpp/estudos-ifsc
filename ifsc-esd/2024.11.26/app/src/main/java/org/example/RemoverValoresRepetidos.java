@@ -4,14 +4,11 @@
 package org.example;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class App {
+public class RemoverValoresRepetidos {
 
     public static void main(String[] args) throws Exception {
         FileInputStream arq = new FileInputStream(args[0]);
