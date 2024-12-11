@@ -11,7 +11,7 @@ public class ListaSequencialSimples {
     }
 
     public void adiciona(Object valor) {
-        if(len > area.length){
+        if(len == area.length){
             expande();
         }
 
