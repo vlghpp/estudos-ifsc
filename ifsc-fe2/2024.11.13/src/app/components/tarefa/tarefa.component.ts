@@ -14,6 +14,8 @@ export class TarefaComponent {
 
   @Input() tarefa: Tarefa = {_id: 0, _descricao: "", _concluida: false};
   @Output() exluir = new EventEmitter<number>();
+  @Output() private atualiza = new EventEmitter<Tarefa>()
+
 
   protected formVisivel: boolean = false;
 
@@ -23,6 +25,11 @@ export class TarefaComponent {
 
   public mostraForm() {
     this.formVisivel = !this.formVisivel;
+  }
+
+  public atualizaTarefa(tarefa: Tarefa){
+    this.mostraForm()
+    this.atualiza.emit(tarefa)   
   }
 
 }

@@ -47,4 +47,14 @@ export class ControladorTarefaService {
     this.listas[this._listaAtual]._tarefas = tarefas;
     this.salvaListas();
   }
+  public atualizaTarefa(tarefa: Tarefa):void{
+    const tarefas = this.listas[this._listaAtual]._tarefas;
+    const index = tarefas.findIndex(t => t._id === tarefa._id)
+    if(index >= 0){
+      tarefas[index] = tarefa
+    }else{
+      alert("Tarefa não encontrada")
+    }
+    this.salvaListas()
+  }
 }

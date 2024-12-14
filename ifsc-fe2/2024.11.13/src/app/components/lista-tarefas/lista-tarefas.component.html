@@ -3,8 +3,5 @@
 <input type="text" [(ngModel)]="descricao">
 <button (click)="adicionaTarefa()">Nova tarefa</button>
 <section *ngFor="let tarefa of lista._tarefas">
-    <app-tarefa
-        [tarefa]="tarefa"
-        (exluir)="excluirTarefa($event)">
-    </app-tarefa>
+    <app-tarefa [tarefa]="tarefa" (exluir)="excluirTarefa($event)" (atualiza)="atualizaTarefa($event)"></app-tarefa>
 </section>
