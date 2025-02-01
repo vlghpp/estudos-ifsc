@@ -4,6 +4,7 @@ import Recipe from './components/Recipe'
 
 function App() {
   const recipes = [{
+      id: 1,
       nome: "Salmão Assado",
       ingredientes: [
           { nome: "Salmão", quantidade: 1, medida: "grande" },
@@ -23,6 +24,7 @@ function App() {
       ],
   },
   {
+      id: 2,
       nome: "Tacos de Peixe",
       ingredientes: [
           { nome: "Peixe Branco", quantidade: 1, medida: "grande" },
@@ -42,12 +44,12 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className='recipes'>
         {recipes.map((recipe, i)=> {
           return <Recipe
-          key = {i}
+          key = {recipe.id}
           name = {recipe.nome}
-          ingredientes = {recipe.ingredientes}
+          ingredients = {recipe.ingredientes}
           instructions={recipe.instrucoes}
           />
         })}
