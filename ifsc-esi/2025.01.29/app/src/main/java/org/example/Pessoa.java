@@ -1,31 +1,57 @@
 package org.example;
 
+import java.security.InvalidParameterException;
+
 public class Pessoa {
+
     private String nome;
     private String cpf;
 
     public Pessoa(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        setNome(nome);
+        setCpf(cpf);
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public Boolean setNome(String nome) {
+
+        if (nome == null)
+            throw new InvalidParameterException("Nome não pode ser nulo");
+
+
+        if (nome.isEmpty())
+            throw new InvalidParameterException("Nome não pode ser vazio");
+
+        if (nome.split(" ").length >= 2) {
+            this.nome = nome;
+            return true;
+        } else {
+            throw new InvalidParameterException("Nome não é válido");
+        }
     }
 
-    public static boolean isValidCPF(String cpf) {
+    public String getCpf() {
+        return cpf;
+    }
+
+    public Boolean setCpf(String cpf) {
+
+        if (cpf == null) {
+            throw new InvalidParameterException("CPF não pode ser nulo");
+        }
+
+        if (validarCpf(cpf)) {
+            this.cpf = cpf;
+            return true;
+        } else {
+            throw new InvalidParameterException("CPF não é valido");
+        }
+    }
+
+    public static boolean validarCpf(String cpf) {
         // Remove caracteres não numéricos
         cpf = cpf.replaceAll("[^0-9]", "");
 
