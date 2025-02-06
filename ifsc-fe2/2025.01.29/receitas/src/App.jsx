@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Recipe from './components/Recipe'
+import Form from './components/Form'
 
 function App() {
-  const recipes = [{
+  const [selectedRecipe, setSelectedRecipe] = useState(null)
+  const [recipes, setRecipes]  = useState([{
       id: 1,
       nome: "Salmão Assado",
       ingredientes: [
@@ -38,8 +41,20 @@ function App() {
           "Coloque o peixe sobre as 3 tortilhas.",
           "Cubra com alface, tomates e queijo.",
       ]
-  }]
+  }])
 
+  const deleteRecipe = (id) => {
+    setRecipes(recipes.filter((recipe) => recipe.id !== id))
+  }
+
+  const onEdit = (id) => {
+    setSelectedRecipe(recipes.find((recipe) => recipe.id === id))
+  }
+
+  const updateRecipe = (recipe) => {
+    setRecipes(recipes.map(r => r.id === recipe.id ? recipe : r))
+    setSelectedRecipe(recipe)
+  }
 
   return (
     <>
@@ -48,12 +63,21 @@ function App() {
         {recipes.map((recipe, i)=> {
           return <Recipe
           key = {recipe.id}
+          id = {recipe.id}
           name = {recipe.nome}
           ingredients = {recipe.ingredientes}
           instructions={recipe.instrucoes}
+          onDelete={deleteRecipe}
+          onEdit={onEdit}
           />
         })}
       </main>
+      
+      <section>
+        <Form recipe={selectedRecipe} onEdit={updateRecipe}/>
+      </section>
+      
+      
     </>
   )
 }

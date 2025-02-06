@@ -6,3 +6,8 @@
     border-radius: 10px;
     max-width: 40vw;
 }
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+}

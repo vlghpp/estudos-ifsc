@@ -1,8 +1,9 @@
+import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
 import Rate from '../Rate';
 import './style.css';
 
 
-export default function Recipe({ name, ingredients, instructions }){
+export default function Recipe({ id, name, ingredients, instructions, onEdit, onDelete }){
     return (
         <section className="recipes-card">
             <h2>{name}</h2>
@@ -19,7 +20,13 @@ export default function Recipe({ name, ingredients, instructions }){
                 ))}
             </ol>
             
-            <Rate></Rate>
+            <div className="footer">
+                <Rate />    
+                <FaRegEdit onClick={() => onEdit(id)}/>
+                <FaRegTrashAlt onClick={() => onDelete(id)}/>
+            </div>
+            
+            
         </section>
     
 )
