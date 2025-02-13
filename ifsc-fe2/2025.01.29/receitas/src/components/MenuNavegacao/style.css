@@ -1,0 +1,17 @@
+.menu-navegacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu-navegacao a{
+    text-decoration: none;
+    color: lightblue;
+
+    &.linkSelecionado{
+        
+        color: rgb(255, 158, 158);
+    }
+}
+

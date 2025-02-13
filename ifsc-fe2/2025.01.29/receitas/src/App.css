@@ -1,9 +1,4 @@
-body {
-  align-items: center;
-  justify-content: center;
-}
-
-.recipes{
-  display: flex;
-  flex-wrap: wrap;
+.receitas {
+    display: flex;
+    flex-wrap: wrap;
 }
