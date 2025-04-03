@@ -1,4 +1,4 @@
-package org.example;
+package org.example.exemplo;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -21,7 +21,7 @@ public class Handler implements HttpHandler {
             String content = Files.readString(path);
 
             OutputStream outputStream = httpExchange.getResponseBody();
-            httpExchange.getRequestHeaders().add("Content-Type", );//seugndo parametro seria o media type
+            httpExchange.getRequestHeaders().add("Content-Type", "text/plain");//seugndo parametro seria o media type
             httpExchange.sendResponseHeaders(200, content.getBytes().length);
 
             outputStream.write(content.getBytes());
